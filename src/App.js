@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./Components/Navbar.js";
 import News from "./Components/News.js";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import React, { useState } from "react";
 
@@ -16,10 +16,10 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Navbar />
-        {/* <LoadingBar height={3} color="#f11946" progress={progress} /> */}
-        <Switch>
+        <LoadingBar height={3} color="#f11946" progress={progress} />
+        <Routes>
           <Route exact path="/">
             <News
               setProgress={setProgress}
@@ -92,8 +92,8 @@ const App = () => {
               category="technology"
             />
           </Route>
-        </Switch>
-      </Router>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
